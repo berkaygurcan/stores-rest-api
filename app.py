@@ -13,9 +13,9 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] =  False #flaskın özelligin kapat
 app.secret_key = "jose"
 api = Api(app)
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
+#@app.before_first_request run.py oluşturuldu heroku içi burası hata alıyordu
+#def create_tables():
+ #   db.create_all()
 
 jwt = JWT(app,authenticate,identity)#/auth
 
